@@ -17,25 +17,37 @@ let tempStorage = {
   },
 };
 
-// highest id function doesn't pay attention do deleted tasks!
-// maybe this is to complicated last object key+1 would be simpler
+// gives back the highest num doesn't pay attention do deleted tasks!
+// could be the achilles heel  when trying to mix 2 datasets or when bigger
 function nextId() {
+  
   // would be safer?
+  // maybe this is to complicated last object key+1 would be simpler
   // let keys = Object.keys(tempStorage);
 
   //   return keys.reduce((acc, key) => {
   //    return Math.max(acc, key.split('_')[1])
   //   }, 0);
+
   const keys = Object.keys(tempStorage);
+  
+  // safety when empty or not a number
+  if(keys.length===0){return `task_1`}
   const lastIDNum = Number(keys[keys.length - 1].split("_")[1]);
-    // safety when empty or not a number
   return `task_${lastIDNum + 1}`;
 }
 
 //add to tempStorage
-
+function addToTempStorage(task){
+  console.log(tempStorage)
+  tempStorage[task[0]]=task[1]
+  console.log(tempStorage)
+}
 //delete form tempStorage
-
+function deleteTaskTemp(id){
+  delete tempStorage[id[0]];
+  console.log(tempStorage)
+}
 //   set Local Storage
 function setLocalStorage(storage) {
   let jsonStorage = JSON.stringify(storage);
@@ -46,12 +58,8 @@ function getLocalStorage() {
   // need some Kind of safety when empty and  tempStorage isn't
   let jsonReturn = localStorage.getItem("tasks");
   jsonReturn = JSON.parse(jsonReturn);
-  console.log(jsonReturn);
   return jsonReturn;
-  //   only console.log for now.
 }
-// setLocalStorage(tempStorage);
-// getLocalStorage();
-console.log(nextId());
 
-export { tempStorage };
+
+export { tempStorage,nextId,addToTempStorage,deleteTaskTemp };
