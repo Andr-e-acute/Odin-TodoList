@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
     <title>Odin Todo List</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>Todo app</header>
-    <nav> sidebar</nav>
+    <nav>sidebar</nav>
     <main>
+        <button class="btn addTaks" >add Task</button>
+      <section class="newTaskModal hidden">
+        <div class="flex">
+          <h3>add a Task</h3>
+          <button class="btn">⨉</button>
+        </div>
+        <form>
+          <label for="task-title">Title</label>
+          <input type="text" id="task-title" />
 
-        
+          <label for="task-description">Description</label>
+          <textarea id="task-description"></textarea>
+
+          <label for="task-dueDate">Due-Date</label>
+          <input type="date" id="task-dueDate" />
+
+          <label for="task-priority">Priority</label>
+          <select name="priority" id="task-priority">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+          <button class="btn">Submit</button>
+        </form>
+      </section>
     </main>
-</body>
+  </body>
 </html>
