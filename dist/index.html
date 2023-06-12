@@ -10,15 +10,24 @@
   </head>
   <body>
     <header>Todo app</header>
-    <nav>sidebar</nav>
+    <nav id="sidebar">
+      <ul>
+        <li class="period" data-tasks="all">All</li>
+        <li class="period">Today</li>
+        <li class="period">Week</li>
+        <div class="Projects">Projects</div>
+        <li class="project">thisworks?</li>
+      </ul>
+    </nav>
     <main>
+      <div id="todos"></div>
       <button class="btn addTaskForm">add Task</button>
       <section class="newTaskForm hidden">
         <div class="formHeader">
           <h3>add a Task</h3>
           <button class="btn closeTaskForm">⨉</button>
         </div>
-        <form class="taskForm"> 
+        <form class="taskForm">
           <label for="task-title">Title</label>
           <input type="text" id="task-title" />
 
@@ -26,7 +35,7 @@
           <textarea id="task-description"></textarea>
 
           <label for="task-dueDate">Due-Date</label>
-          <input  type="date" id="task-dueDate" />
+          <input type="date" id="task-dueDate" />
 
           <label for="task-priority">Priority</label>
           <select name="priority" id="task-priority">

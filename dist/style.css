@@ -7,11 +7,17 @@ body {
   margin: 0;
   padding: 0;
 }
+li {
+  list-style: none;
+}
+ul {
+  padding-left: 0px;
+}
 
 :root {
   --bg-main-color: lightgray;
   --bg-secondary-color: lightblue;
-  
+  --bg-secondary-contrast: rgb(220, 229, 232);
   --contrast-color: blue;
   --text-color: black;
   --text-color-contrast: white;
@@ -20,7 +26,7 @@ body {
 body {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 8fr;
+  grid-template-columns: 2fr 8fr;
   grid-template-rows: 1fr 20fr;
 }
 header {
@@ -28,18 +34,43 @@ header {
   grid-column: 1/-1;
   background-color: var(--contrast-color);
 }
-nav {
+#sidebar {
   background-color: var(--bg-secondary-color);
+  padding-left: 10px;
 }
-main {
-  /* a background picture? */
-  background-color:white;
+#sidebar>ul {
+  font-size: 1.5rem;
+  text-align: left;
+}
+#sidebar>ul>li:hover{
+  cursor: pointer;
+  background-color:var(--bg-secondary-contrast);
+
+}
+#sidebar ul .active {
+  font-weight: bold;
+}
+.project  {
+  padding-left: 20px;
+  color:var(--text-color);
+  background-color:var(--bg-secondary-color);
 }
 
+main {
+  /* a background picture? */
+  background-color: white;
+}
+
+.task{
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: var(--bg-main-color);
+  padding-left: 10px;
+}
 /* Modal */
 .newTaskForm {
-  margin:1rem;
-  padding:0 1.5rem;
+  margin: 1rem;
+  padding: 0 1.5rem;
   position: absolute;
 
   background-color: var(--bg-main-color);
@@ -47,12 +78,13 @@ main {
   border-radius: 15px;
 }
 
-.newTaskForm > .formHeader{
+.newTaskForm > .formHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+ 
 .modal input {
   padding: 0.7rem 1rem;
   border: 1px solid #ddd;
@@ -65,7 +97,7 @@ main {
   color: #777;
   margin: 0.4rem 0 0.2rem;
 }
-.hidden{
+.hidden {
   display: none;
 }
 button {

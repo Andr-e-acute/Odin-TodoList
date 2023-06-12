@@ -6,12 +6,13 @@ import { createTask } from "./tasks";
 // const test = (document.querySelector("#test").textContent = "index.js works");
 
 // test add amd remove test task
-let testTask = createTask("newTask", "a test ", " 22.02.02", "2", true);
+// let testTask = createTask("newTask", "a test ", " 22.02.02", "2", true);
 
-addTaskTemp(testTask);
-deleteTaskTemp(testTask);
+// addTaskTemp(testTask);
+// deleteTaskTemp(testTask);
 
 
 
 // not testing------------------------------------------
+// first load:
 createEventListener();

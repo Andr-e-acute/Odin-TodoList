@@ -1,11 +1,5 @@
-
-create form to add.
-finish modal...
-
-get values from Form
-  -(getElement.)
-
 display.js create DOM elements
+-display  all todos
 ------------------------------------------
 do I need have the storage as an Object
 
