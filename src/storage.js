@@ -39,9 +39,8 @@ let tempStorage = [
 // }
 
 //add to tempStorage
-function addToTempStorage(task){
-  console.log("add To TempStorage")
-  console.log(tempStorage)
+function addTaskTemp(task){
+console.log("createTask")
   tempStorage.push(task)
   console.log(tempStorage)
 }
@@ -69,6 +68,6 @@ function getLocalStorage() {
   return jsonReturn;
 }
 
-console.log("this loads")
+// console.log("this loads")
 
-export { tempStorage,addToTempStorage,deleteTaskTemp };
+export { tempStorage,addTaskTemp,deleteTaskTemp };

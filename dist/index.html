@@ -12,13 +12,13 @@
     <header>Todo app</header>
     <nav>sidebar</nav>
     <main>
-        <button class="btn addTaks" >add Task</button>
-      <section class="newTaskModal hidden">
-        <div class="flex">
+      <button class="btn addTaskForm">add Task</button>
+      <section class="newTaskForm hidden">
+        <div class="formHeader">
           <h3>add a Task</h3>
-          <button class="btn">⨉</button>
+          <button class="btn closeTaskForm">⨉</button>
         </div>
-        <form>
+        <form class="taskForm"> 
           <label for="task-title">Title</label>
           <input type="text" id="task-title" />
 
@@ -26,7 +26,7 @@
           <textarea id="task-description"></textarea>
 
           <label for="task-dueDate">Due-Date</label>
-          <input type="date" id="task-dueDate" />
+          <input  type="date" id="task-dueDate" />
 
           <label for="task-priority">Priority</label>
           <select name="priority" id="task-priority">
@@ -34,7 +34,7 @@
             <option value="Medium">Medium</option>
             <option value="Low">Low</option>
           </select>
-          <button class="btn">Submit</button>
+          <button class="btn submitTask">Submit</button>
         </form>
       </section>
     </main>

@@ -1,12 +1,17 @@
-import { tempStorage,addToTempStorage,deleteTaskTemp } from "./storage";
+import { tempStorage, addTaskTemp, deleteTaskTemp } from "./storage";
+import { createEventListener } from "./input";
 import { createTask } from "./tasks";
-
 
 // playing around testing?
 // const test = (document.querySelector("#test").textContent = "index.js works");
 
-let testTask=createTask("newTask","a test "," 22.02.02", "2",true)
+// test add amd remove test task
+let testTask = createTask("newTask", "a test ", " 22.02.02", "2", true);
 
-addToTempStorage(testTask)
+addTaskTemp(testTask);
+deleteTaskTemp(testTask);
 
-deleteTaskTemp(testTask)
+
+
+// not testing------------------------------------------
+createEventListener();
