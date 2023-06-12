@@ -6,7 +6,7 @@ function createTask(title, description, dueDate, priority, done) {
   return {
     title,
     description,
-    dueDate,
+    dueDate:new Date(dueDate),
     priority,
     done,
   };

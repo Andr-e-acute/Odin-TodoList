@@ -1,7 +1,6 @@
 import { tempStorage, addTaskTemp, deleteTaskTemp } from "./storage";
 import { createEventListener } from "./input";
 import { createTask } from "./tasks";
-
 // playing around testing?
 // const test = (document.querySelector("#test").textContent = "index.js works");
 
@@ -10,7 +9,7 @@ import { createTask } from "./tasks";
 
 // addTaskTemp(testTask);
 // deleteTaskTemp(testTask);
-
+// ---------------------------------------
 
 
 // not testing------------------------------------------

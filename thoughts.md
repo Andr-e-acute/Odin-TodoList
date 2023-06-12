@@ -1,7 +1,11 @@
-display.js create DOM elements
--display  all todos
+how to order the task
+  by due date.
+    need to figuer out date-fns
+
+ <!-- -when adding task need to recreate DOm where?
+ -display in the sidebar which category is active. -->
 ------------------------------------------
-do I need have the storage as an Object
+<!-- do I need have the storage as an Object
 
 object
 + a clear identification of each task
@@ -18,8 +22,8 @@ storage array of task objects
 
 what does other people do array:3 object:
 
-I WIll change to array
-----------------------------------
+I WIll change to array -->
+<!-- ----------------------------------
 are Projects a propertie vs storage Object
   - do i need a project catergory or can projects be a property of task
 
@@ -34,7 +38,7 @@ are Projects a propertie vs storage Object
     - when adding/deleting task need to create everthing from new
         as a storage I don't need to create the other project new.
     - when i want the delete a project hard. 
-    - share a project todolist hard. (can use the already created category.)
+    - share a project todolist hard. (can use the already created category.) -->
 -------------------------------------
 should the category/project hold the index or the object.
 need testing  are the task in a project array not passed as reference?
