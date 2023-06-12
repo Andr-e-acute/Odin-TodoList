@@ -22,6 +22,7 @@ let tempStorage = [
 console.log("create some test task tempstorage is now:");
 addTaskTemp(createTask("title2", "description2", "02.02.22", "1", "true"));
 addTaskTemp(createTask("title1", "description1", "01.01.11", "1", "true"));
+addTaskTemp(createTask("today","important Today",Date.now(),3,false,"todays Project"))
 console.log(tempStorage)
 //add to tempStorage
 function addTaskTemp(task){

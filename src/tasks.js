@@ -2,13 +2,14 @@ import { tempStorage } from "./storage";
 // factory function to create task objects
 // Odin requierment factories or constructors/classes to generate them.
 
-function createTask(title, description, dueDate, priority, done) {
+function createTask(title, description, dueDate, priority, done,project) {
   return {
     title,
     description,
     dueDate:new Date(dueDate),
     priority,
     done,
+    project
   };
 }
 

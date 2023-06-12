@@ -1,20 +1,36 @@
 import { tempStorage } from "./storage";
-import { compareAsc, compareDesc, isToday,isThisWeek } from "date-fns";
 
+ import { compareAsc, compareDesc, isToday, isThisWeek } from "date-fns";
+
+let projectArray=createProjectArray()
+function createProjectArray() {
+  const projectArray = [
+    ...new Set(tempStorage
+        .filter(task=>task.project)
+        .map((task) => task.project)),
+  ];
+  return projectArray;
+}
 // Libarian creates an Array of Task
-function createTaskList(period = "not choosen") {
-  console.log(`create a taskList with:${period} tasks`);
+function createTaskArray(choise = "not choosen") {
+
+  console.log(`create a taskList with:${choise} tasks`);
   let currentTaskList = [];
-  if (period === "all") {
+  if (choise === "all") {
     currentTaskList = [...tempStorage];
-  } else if (period === "today") {
+  } else if (choise === "today") {
     currentTaskList = tempStorage.filter((task) => isToday(task.dueDate));
+  } else if (choise === "week") {
+    currentTaskList = tempStorage.filter((task) => isThisWeek(task.dueDate));
+  }
+  else if(projectArray.includes(choise)){
+    currentTaskList= tempStorage.filter((task)=>{
+    return task.project===choise
+    })
   } 
-  else if (period === "week") {
-    currentTaskList = tempStorage.filter((task) => isThisWeek(task.dueDate));}
   else {
     currentTaskList = [
-      { title: "something went wrong ", description: "libarian messed up" },
+      { title: "libarian messed up", description: `choise was:${choise}` },
     ];
   }
   console.log(currentTaskList);
@@ -29,4 +45,5 @@ function sortTasklist(taskList) {
   });
   console.log(taskList);
 }
-export { createTaskList };
+
+export { createTaskArray,projectArray };

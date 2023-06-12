@@ -1,6 +1,15 @@
-how to order the task
-  by due date.
-    need to figuer out date-fns
+ create a new Project button functionality
+ 
+  add better default storage
+  try local Storage
+ start styling
+ 
+ 
+ ---------------------------------
+  nice to haves.
+-todoist changes where the newtask form appears when you click different buttons I like the form in the task list.
+-keyboard inputs a must for me..
+
 
  <!-- -when adding task need to recreate DOm where?
  -display in the sidebar which category is active. -->
@@ -40,11 +49,12 @@ are Projects a propertie vs storage Object
     - when i want the delete a project hard. 
     - share a project todolist hard. (can use the already created category.) -->
 -------------------------------------
-should the category/project hold the index or the object.
+<!-- should the category/project hold the index or the object.
 need testing  are the task in a project array not passed as reference?
+it is a reference
 create the libarien class/module. 
---------------------------------------
-Register Category.js creation
+-------------------------------------- -->
+<!-- Register Category.js creation
 To I need this  ?
 <!-- first load Register loops over the tempStorage and creates the category Register.
 Register.create()
@@ -55,14 +65,10 @@ use it like Register.getWeek Register.getDay Register.getProjects...
 when adding new task can use the same function as Register.create . 
 deleting changing needs a different functionality. -->
 
-when the category is first clicked(maybe on first load it doesn't matte for now)
- it calls the create dom module and create the list from the IdArray in Register.
+<!-- when the category is first clicked(maybe on first load it doesn't matte for now)
+ it calls the create dom module and create the list from the IdArray in Register. -->
+ -->
 
-
- ---------------------------------
-  nice to haves.
--todoist changes where the newtask form appears when you click different buttons I like the form in the task list.
--keyboard inputs a must for me..
 
 
 

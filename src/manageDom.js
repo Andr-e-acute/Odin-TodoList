@@ -1,6 +1,6 @@
 // createDOM.js creates/display DOM elements
-import { createTaskList } from "./Libarian";
-import { format,isValid } from "date-fns";
+import { createTaskArray, projectArray } from "./Libarian";
+import { format, isValid } from "date-fns";
 
 const allCategory = document.querySelector("[data-tasks='all']");
 let currentActive;
@@ -13,7 +13,7 @@ function changeActive(target) {
   displayTasks();
 }
 function displayTasks() {
-  const taskList = createTaskList(currentActive.dataset.tasks);
+  const taskList = createTaskArray(currentActive.dataset.tasks);
   const taskContainer = document.getElementById("todos");
   taskContainer.textContent = "";
   taskList.forEach((task) => {
@@ -26,15 +26,9 @@ function displayTasks() {
 
       if (key === "dueDate") {
         property.classList = key;
-       
-        // property.textContent = !isNaN(task[key].getTime())
-        //   ? format(task[key], "dd/MM/yyyy")
-        //   : "";
-       
-        // uses date-fns I don't know which one is better
         property.textContent = isValid(task[key])
-        ? format(task[key], "dd/MM/yyyy")
-        : "";
+          ? format(task[key], "dd/MM/yyyy")
+          : "";
         todo.appendChild(property);
       } else {
         property.classList = key;
@@ -46,7 +40,20 @@ function displayTasks() {
     taskContainer.appendChild(todo);
   });
 }
-
+function displayProjects() {
+  
+  const addProjectBtn =document.querySelector("#sidebar>ul>.addProject")
+  const projectDom = document.createElement("li");
+  projectDom.classList.add("project");
+  projectArray.map((project) => {
+    console.log(project);
+    projectDom.textContent = project;
+    projectDom.dataset.tasks=project;
+    addProjectBtn.before(projectDom)
+  });
+  
+}
+// creates the tasksArray on first load
 changeActive(allCategory);
-
+displayProjects();
 export { displayTasks, changeActive };
