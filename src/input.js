@@ -1,11 +1,23 @@
 import { addTaskTemp } from "./storage";
 import { createTask } from "./tasks";
-
 import { changeActive, displayTasks } from "./manageDom";
 
 const createEventListener = () => {
-  // show taskForm btn
-  const addTasksBtn = document.querySelectorAll(".addTaskForm");
+  //sidebar categories
+  const categories = document.querySelectorAll("nav li");
+  console.log(categories)
+  categories.forEach((category) => {
+    category.addEventListener("click", (e) => {
+      changeActive(e.target.closest("li"));
+    });
+  });
+  //addProject btn
+    const addProjectBtn= document.querySelector(".addProject");
+    addProjectBtn.addEventListener('click',showProjectForm )
+
+
+  // addTaskForm btn
+  const addTasksBtn = document.querySelectorAll(".openTaskForm");
   addTasksBtn.forEach((button) => {
     button.addEventListener("click", showTaskForm);
   });
@@ -15,27 +27,24 @@ const createEventListener = () => {
   closeTasksBtn.addEventListener("click", hideTaskForm);
 
   //submit TaskForm btn
-  const submitTask = document.querySelector(".submitTask");
+  const submitTask = document.querySelector(".submitTaskForm");
   submitTask.addEventListener("click", (e) => {
     e.preventDefault();
     submitTaskForm(e);
   });
 
-  //sidebar
-  const categories = document.querySelectorAll("nav li");
-  categories.forEach((category) => {
-    category.addEventListener("click", (e) => {
-      changeActive(e.target);
-    });
-  });
 };
+function showProjectForm(){
+  console.log("addProject")
+}
 
 function showTaskForm() {
-  const taskForm = document.querySelector(".newTaskForm");
+  console.log("showTask")
+  const taskForm = document.querySelector(".addTask");
   taskForm.classList.remove("hidden");
 }
 function hideTaskForm() {
-  const taskForm = document.querySelector(".newTaskForm");
+  const taskForm = document.querySelector(".addTask");
   taskForm.classList.add("hidden");
 }
 function submitTaskForm(e) {

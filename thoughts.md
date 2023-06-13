@@ -1,10 +1,37 @@
+ create a new modalContainer
+ 
+
  create a new Project button functionality
  
   add better default storage
   try local Storage
- start styling
- 
- 
+
+  change task priority to tags?
+  
+  clean up code comment it etc
+    index.js
+    input.js
+    Libarian.js
+    manageDom.js
+    storage.js
+    tasks.js
+
+  start styling
+    -improve basic layout
+    -both adds the same Modal! size and look?
+    <!-- -header has no function? -->
+    -minimal sidebar look collapse to 
+    symbols?(then needs color for Projects)
+
+------------form/modal-----------------
+*Project and task(when expanded view ) share the same layout
+*task should have quick add field only title
+  expands with tab ? arrow?
+  enter adds it into the active TaskList(today,project)
+  *double clicking and task should expane with direct edit same layout/positon as the modal
+
+
+
  ---------------------------------
   nice to haves.
 -todoist changes where the newtask form appears when you click different buttons I like the form in the task list.

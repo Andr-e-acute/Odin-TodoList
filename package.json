@@ -23,6 +23,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "@mdi/js": "^7.2.96",
     "date-fns": "^2.30.0"
   }
 }

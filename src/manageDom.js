@@ -6,12 +6,15 @@ const allCategory = document.querySelector("[data-tasks='all']");
 let currentActive;
 
 function changeActive(target) {
-  currentActive = document.querySelector("#sidebar>ul .active") ?? allCategory;
-  currentActive.classList.remove("active");
+  // there should  never be more then 1 active change do querySelector?
+  currentActive = document.querySelectorAll(".active") ?? allCategory;
+  currentActive.forEach(active=>active.classList.remove("active"))
+
   target.classList.add("active");
   currentActive = target;
   displayTasks();
 }
+
 function displayTasks() {
   const taskList = createTaskArray(currentActive.dataset.tasks);
   const taskContainer = document.getElementById("todos");
@@ -42,11 +45,11 @@ function displayTasks() {
 }
 function displayProjects() {
   
-  const addProjectBtn =document.querySelector("#sidebar>ul>.addProject")
+  const addProjectBtn =document.querySelector("#sidebar>.addProject")
   const projectDom = document.createElement("li");
   projectDom.classList.add("project");
   projectArray.map((project) => {
-    console.log(project);
+  
     projectDom.textContent = project;
     projectDom.dataset.tasks=project;
     addProjectBtn.before(projectDom)
