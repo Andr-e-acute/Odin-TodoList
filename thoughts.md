@@ -1,6 +1,13 @@
- create a new modalContainer
+ get the expand Projects working
+ change style of add Project btn
+ test collapsing nav(if its look ok)
+ add user color to projects
+    -change the storage of projects.
+    -messy? join a string to the project name.
+    -or use the projectArray?
+    -or userSettingsObject?
  
-
+ create a new modalContainer
  create a new Project button functionality
  
   add better default storage
