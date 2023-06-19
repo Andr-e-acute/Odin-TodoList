@@ -90,7 +90,8 @@ nav > * {
   font-size: var(--font-size-medium);
 }
 #sidebar .project {
-  margin-left: 42px;
+  padding-left: 52px;
+  /* better way kind of a magic number gap +svg size +previous padding */
 }
 #sidebar .project:hover,
 #sidebar .project.active,
