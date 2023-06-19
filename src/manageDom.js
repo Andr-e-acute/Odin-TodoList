@@ -5,7 +5,9 @@ import { format, isValid } from "date-fns";
 const allCategory = document.querySelector("[data-tasks='all']");
 let currentActive;
 
-function changeActive(target) {
+
+
+function changeActiveCategory(target) {
   // there should  never be more then 1 active change do querySelector?
   currentActive = document.querySelectorAll(".active") ?? allCategory;
   currentActive.forEach(active=>active.classList.remove("active"))
@@ -13,6 +15,23 @@ function changeActive(target) {
   target.classList.add("active");
   currentActive = target;
   displayTasks();
+}
+
+function displayProjects() {
+  
+  const addProjectBtn =document.querySelector("#sidebar>.addProject")
+ 
+  projectArray.map((project) => {
+    const projectDom = document.createElement("li");
+    projectDom.classList.add("project");
+    projectDom.classList.add("toggleProjectsVis");
+    
+    projectDom.textContent = project;
+    projectDom.dataset.tasks=project;
+   
+    addProjectBtn.before(projectDom)
+  });
+  
 }
 
 function displayTasks() {
@@ -43,20 +62,8 @@ function displayTasks() {
     taskContainer.appendChild(todo);
   });
 }
-function displayProjects() {
-  
-  const addProjectBtn =document.querySelector("#sidebar>.addProject")
-  const projectDom = document.createElement("li");
-  projectDom.classList.add("project");
-  projectArray.map((project) => {
-  
-    projectDom.textContent = project;
-    projectDom.dataset.tasks=project;
-    addProjectBtn.before(projectDom)
-  });
-  
-}
+
 // creates the tasksArray on first load
-changeActive(allCategory);
+changeActiveCategory(allCategory);
 displayProjects();
-export { displayTasks, changeActive };
+export { displayTasks, changeActiveCategory };

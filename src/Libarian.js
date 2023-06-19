@@ -8,6 +8,7 @@ function createProjectArray() {
       tempStorage.filter((task) => task.project).map((task) => task.project)
     ),
   ];
+  console.log(projectArray)
   return projectArray;
 }
 

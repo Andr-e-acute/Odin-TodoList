@@ -1,20 +1,23 @@
 import { addTaskTemp } from "./storage";
 import { createTask } from "./tasks";
-import { changeActive, displayTasks } from "./manageDom";
+import { changeActiveCategory, displayTasks } from "./manageDom";
 
 const createEventListener = () => {
   //sidebar categories
   const categories = document.querySelectorAll("nav li");
-  console.log(categories)
   categories.forEach((category) => {
     category.addEventListener("click", (e) => {
-      changeActive(e.target.closest("li"));
+      changeActiveCategory(e.target.closest("li"));
     });
   });
-  //addProject btn
-    const addProjectBtn= document.querySelector(".addProject");
-    addProjectBtn.addEventListener('click',showProjectForm )
+  //Projects toggle hide
+  const projectsCatergory = document.querySelector(".projects");
+  projectsCatergory.addEventListener("click",clickedProjects 
+  );
 
+  //addProject btn
+  const addProjectBtn = document.querySelector(".addProject");
+  addProjectBtn.addEventListener("click", showProjectForm);
 
   // addTaskForm btn
   const addTasksBtn = document.querySelectorAll(".openTaskForm");
@@ -28,18 +31,26 @@ const createEventListener = () => {
 
   //submit TaskForm btn
   const submitTask = document.querySelector(".submitTaskForm");
-  submitTask.addEventListener("click", (e) => {
+  submitTask.addEventListener("clickProjects", (e) => {
     e.preventDefault();
     submitTaskForm(e);
   });
-
 };
-function showProjectForm(){
-  console.log("addProject")
+function clickedProjects() {
+  //toggle visibilty 
+  const projects = document.querySelectorAll("#sidebar .toggleProjectsVis");
+  projects.forEach((project) => {
+    project.classList.toggle("hidden");
+  });
+  // creates a Project overview in main 
+}
+
+function showProjectForm() {
+  console.log("addProject");
 }
 
 function showTaskForm() {
-  console.log("showTask")
+  console.log("showTask");
   const taskForm = document.querySelector(".addTask");
   taskForm.classList.remove("hidden");
 }
@@ -62,7 +73,7 @@ function submitTaskForm(e) {
   const task = createTask(title, description, dueDate, priority);
 
   addTaskTemp(task);
-  displayTasks()
+  displayTasks();
   hideTaskForm();
 }
 export { createEventListener };

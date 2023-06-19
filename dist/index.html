@@ -11,16 +11,16 @@
   <body>
     <nav id="sidebar" class="expanded">
       <li data-tasks="all">
-
         <div>All</div>
       </li>
-      <li data-tasks="today">
-
-        Today</li>
+      <li data-tasks="today">Today</li>
       <li data-tasks="week">Week</li>
-      
-      <div class="projects">Projects</div>
-      <button class="btn addProject">add Project</button>
+      <div class="projects hideProjects">
+        Projects
+        <div id="show-projects" class="toggleProjectsVis hidden"></div>
+        <div id="hide-projects" class="toggleProjectsVis "></div>
+      </div>
+      <button class="addProject toggleProjectsVis">new Project</button>
     </nav>
     <main>
       <div id="todos"></div>
@@ -54,7 +54,6 @@
           </form>
         </section>
       </div>
-
     </main>
   </body>
 </html>

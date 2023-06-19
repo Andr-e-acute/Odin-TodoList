@@ -23,6 +23,9 @@ let tempStorage = [
 addTaskTemp(createTask("title2", "description2", "02.02.22", "1", "true"));
 addTaskTemp(createTask("title1", "description1", "01.01.11", "1", "true"));
 addTaskTemp(createTask("today","important Today",Date.now(),3,false,"todays Project"))
+addTaskTemp(createTask("1406title","important desription","14.06.2023",2,false,"todays Project"))
+addTaskTemp(createTask("1306title","important desription","13.06.2023",2,false,"2.Project"))
+
 
 //add to tempStorage
 function addTaskTemp(task){
