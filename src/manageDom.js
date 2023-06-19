@@ -5,12 +5,10 @@ import { format, isValid } from "date-fns";
 const allCategory = document.querySelector("[data-tasks='all']");
 let currentActive;
 
-
-
 function changeActiveCategory(target) {
   // there should  never be more then 1 active change do querySelector?
   currentActive = document.querySelectorAll(".active") ?? allCategory;
-  currentActive.forEach(active=>active.classList.remove("active"))
+  currentActive.forEach((active) => active.classList.remove("active"));
 
   target.classList.add("active");
   currentActive = target;
@@ -18,20 +16,18 @@ function changeActiveCategory(target) {
 }
 
 function displayProjects() {
-  
-  const addProjectBtn =document.querySelector("#sidebar>.addProject")
- 
+  const addProjectBtn = document.querySelector("#sidebar>.addProject");
+
   projectArray.map((project) => {
     const projectDom = document.createElement("li");
     projectDom.classList.add("project");
     projectDom.classList.add("toggleProjectsVis");
-    
+
     projectDom.textContent = project;
-    projectDom.dataset.tasks=project;
-   
-    addProjectBtn.before(projectDom)
+    projectDom.dataset.tasks = project;
+
+    addProjectBtn.after(projectDom);
   });
-  
 }
 
 function displayTasks() {

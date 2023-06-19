@@ -25,14 +25,20 @@
     <main>
       <div id="todos"></div>
       <button class="btn openTaskForm">add Task</button>
-      <div class="modals">
+      <div class="modals  ">
         <section class="modal addProject">
           <div class="formHeader">
             <h3>add Project</h3>
             <button class="btn closeProjectForm">⨉</button>
           </div>
+          <form class="projectForm">
+            <label for="projec-title">Title</label>
+            <input type="text" id="projec-title"/>
+
+            <!-- color picker priority -->
+          </form>
         </section>
-        <section class="modal addTask">
+        <section class="modal addTask hidden">
           <div class="formHeader">
             <h3>add Task</h3>
             <button class="btn closeTaskForm">⨉</button>

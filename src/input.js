@@ -11,8 +11,8 @@ const createEventListener = () => {
     });
   });
   //Projects toggle hide
-  const projectsCatergory = document.querySelector(".projects");
-  projectsCatergory.addEventListener("click",clickedProjects 
+  const projectsCategory = document.querySelector(".projects");
+  projectsCategory.addEventListener("click",clickedProjects 
   );
 
   //addProject btn
@@ -37,7 +37,7 @@ const createEventListener = () => {
   });
 };
 function clickedProjects() {
-  //toggle visibilty 
+  //toggle visibility 
   const projects = document.querySelectorAll("#sidebar .toggleProjectsVis");
   projects.forEach((project) => {
     project.classList.toggle("hidden");
