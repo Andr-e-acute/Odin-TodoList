@@ -1,14 +1,14 @@
- get the expand Projects working
- change style of add Project btn
- test collapsing nav(if its look ok)
- add user color to projects
-    -change the storage of projects.
-    -messy? join a string to the project name.
-    -or use the projectArray?
-    -or userSettingsObject?
- 
+
+
+
+get the project form working.
+-add button submit
+- in input.js create form submitting
+
+new Project button should open/hidde the project Modal 
+
  create a new modalContainer
- create a new Project button functionality
+
  
   add better default storage
   try local Storage
@@ -24,10 +24,10 @@
     tasks.js
 
   start styling
-    -improve basic layout
+   
     -both adds the same Modal! size and look?
     <!-- -header has no function? -->
-    -minimal sidebar look collapse to 
+    -collapse sidebar to 
     symbols?(then needs color for Projects)
 
 ------------form/modal-----------------
@@ -41,9 +41,10 @@
 
  ---------------------------------
   nice to haves.
+   test collapsing nav(if its look ok)
 -todoist changes where the newtask form appears when you click different buttons I like the form in the task list.
 -keyboard inputs a must for me..
-
+-colored flags for the priority dropdown
 
  <!-- -when adding task need to recreate DOm where?
  -display in the sidebar which category is active. -->

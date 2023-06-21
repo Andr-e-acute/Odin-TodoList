@@ -1,14 +1,14 @@
 import { compareAsc, isToday, isThisWeek } from "date-fns";
-import { tempStorage } from "./storage";
+import { tempTaskStorage } from "./storage";
 
 let projectArray = createProjectArray();
 function createProjectArray() {
   const projectArray = [
     ...new Set(
-      tempStorage.filter((task) => task.project).map((task) => task.project)
+      tempTaskStorage.filter((task) => task.project).map((task) => task.project)
     ),
   ];
-  console.log(projectArray)
+
   return projectArray;
 }
 
@@ -16,13 +16,13 @@ function createTaskArray(choise = "not choosen") {
   console.log(`create a taskList with:${choise} tasks`);
   let currentTaskList = [];
   if (choise === "all") {
-    currentTaskList = [...tempStorage];
+    currentTaskList = [...tempTaskStorage];
   } else if (choise === "today") {
-    currentTaskList = tempStorage.filter((task) => isToday(task.dueDate));
+    currentTaskList = tempTaskStorage.filter((task) => isToday(task.dueDate));
   } else if (choise === "week") {
-    currentTaskList = tempStorage.filter((task) => isThisWeek(task.dueDate));
+    currentTaskList = tempTaskStorage.filter((task) => isThisWeek(task.dueDate));
   } else if (projectArray.includes(choise)) {
-    currentTaskList = tempStorage.filter((task) => {
+    currentTaskList = tempTaskStorage.filter((task) => {
       return task.project === choise;
     });
   } else {
@@ -42,4 +42,4 @@ function sortTasklist(taskList) {
   console.log(taskList);
 }
 
-export { createTaskArray, projectArray };
+export { createTaskArray };

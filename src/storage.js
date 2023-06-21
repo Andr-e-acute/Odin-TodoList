@@ -1,5 +1,5 @@
 import { createTask } from "./tasks";
-let tempStorage = [
+let tempTaskStorage = [
   // {
   //   title: "title1",
   //   description: "description1",
@@ -26,24 +26,35 @@ addTaskTemp(createTask("today","important Today",Date.now(),3,false,"todays Proj
 addTaskTemp(createTask("1406title","important desription","14.06.2023",2,false,"todays Project"))
 addTaskTemp(createTask("1306title","important desription","13.06.2023",2,false,"2.Project"))
 
+// task storage
 
-//add to tempStorage
+//add to tempTaskStorage
 function addTaskTemp(task){
-
-  tempStorage.push(task)
-  
+  tempTaskStorage.push(task)
 }
 //delete form tempStorage
 function deleteTaskTemp(taskToDelete){
   console.log("delete formTempStorage")
   console.log(taskToDelete)
-  const taskIndex = tempStorage.findIndex(task => task === taskToDelete);
+  const taskIndex = tempTaskStorage.findIndex(task => task === taskToDelete);
 
   if (taskIndex !== -1) {
-    tempStorage.splice(taskIndex, 1);
+    tempTaskStorage.splice(taskIndex, 1);
   }
-  console.log(tempStorage)
+  console.log(tempTaskStorage)
 }
+
+
+
+
+
+
+
+
+
+
+
+// local storage
 //   set Local Storage
 function setLocalStorage(storage) {
   let jsonStorage = JSON.stringify(storage);
@@ -59,5 +70,6 @@ function getLocalStorage() {
 
 
 
-
-export { tempStorage,addTaskTemp,deleteTaskTemp };
+export { tempTaskStorage,addTaskTemp,deleteTaskTemp };
+// need to change the tempStorage 
+// export { tempStorage,addTaskTemp,deleteTaskTemp };

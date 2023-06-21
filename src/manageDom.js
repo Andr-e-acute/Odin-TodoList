@@ -1,5 +1,6 @@
 // createDOM.js creates/display DOM elements
-import { createTaskArray, projectArray } from "./Libarian";
+import { createTaskArray} from "./Libarian";
+import { projects} from "./projects";
 import { format, isValid } from "date-fns";
 
 const allCategory = document.querySelector("[data-tasks='all']");
@@ -18,13 +19,13 @@ function changeActiveCategory(target) {
 function displayProjects() {
   const addProjectBtn = document.querySelector("#sidebar>.addProject");
 
-  projectArray.map((project) => {
+  projects.forEach((project) => {
     const projectDom = document.createElement("li");
     projectDom.classList.add("project");
     projectDom.classList.add("toggleProjectsVis");
 
-    projectDom.textContent = project;
-    projectDom.dataset.tasks = project;
+    projectDom.textContent = project.title;
+    projectDom.dataset.tasks = project.title;
 
     addProjectBtn.after(projectDom);
   });

@@ -32,6 +32,7 @@ const createEventListener = () => {
   //submit TaskForm btn
   const submitTask = document.querySelector(".submitTaskForm");
   submitTask.addEventListener("clickProjects", (e) => {
+    console.log("*")
     e.preventDefault();
     submitTaskForm(e);
   });
@@ -59,6 +60,7 @@ function hideTaskForm() {
   taskForm.classList.add("hidden");
 }
 function submitTaskForm(e) {
+  console.log("sumit task")
   const form = e.target.closest("form");
   //todo don't like it DRY
   const title = form.querySelector("#task-title").value;
@@ -71,7 +73,7 @@ function submitTaskForm(e) {
   form.querySelector("#task-priority").value = "High";
 
   const task = createTask(title, description, dueDate, priority);
-
+  console.log(task)
   addTaskTemp(task);
   displayTasks();
   hideTaskForm();
