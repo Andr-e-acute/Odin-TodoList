@@ -31,7 +31,7 @@
             <h3>add Project</h3>
             <button class="btn closeProjectForm">⨉</button>
           </div>
-          <form class="projectForm">
+          <form id="projectForm">
             <label for="project-title">Title</label>
             <input type="text" id="project-title" />
             <label for="project-color">Color</label>
@@ -43,9 +43,7 @@
               <option value="2">Medium</option>
               <option value="1">Low</option>
             </select>
-            <section>
-              <option value="3"></option>
-            </section>
+            <button class="btn submitProjectForm" type="submit">Submit</button>
           </form>
         </section>
         <section class="modal addTask hidden">
@@ -66,7 +64,7 @@
               <option value="2">Medium</option>
               <option value="1">Low</option>
             </select>
-            <button class="btn submitTaskForm">Submit</button>
+            <button class="btn submitTaskForm" type="submit">Submit</button>
           </form>
         </section>
       </div>

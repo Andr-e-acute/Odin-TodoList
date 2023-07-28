@@ -1,6 +1,7 @@
 import { addTaskTemp } from "./storage";
 import { createTask } from "./tasks";
-import { changeActiveCategory, displayTasks } from "./manageDom";
+import { changeActiveCategory, displayTasks ,displayProjects } from "./manageDom";
+import {addProject, createProject}from"./projects";
 
 const createEventListener = () => {
   //sidebar categories
@@ -12,8 +13,7 @@ const createEventListener = () => {
   });
   //Projects toggle hide
   const projectsCategory = document.querySelector(".projects");
-  projectsCategory.addEventListener("click",clickedProjects 
-  );
+  projectsCategory.addEventListener("click", clickedProjects);
 
   //addProject btn
   const addProjectBtn = document.querySelector(".addProject");
@@ -30,24 +30,42 @@ const createEventListener = () => {
   closeTasksBtn.addEventListener("click", hideTaskForm);
 
   //submit TaskForm btn
-  const submitTask = document.querySelector(".submitTaskForm");
-  submitTask.addEventListener("clickProjects", (e) => {
-    console.log("*")
+  const submitTask = document.querySelector(".taskForm");
+  submitTask.addEventListener("submit", (e) => {
     e.preventDefault();
+    console.log("submitProjcets");
     submitTaskForm(e);
+  });
+  // submit ProjectForm
+  const submitProject = document.getElementById("projectForm");
+  submitProject.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log("add Project");
+    submitProjectForm(e);
   });
 };
 function clickedProjects() {
-  //toggle visibility 
+  //toggle visibility
   const projects = document.querySelectorAll("#sidebar .toggleProjectsVis");
   projects.forEach((project) => {
     project.classList.toggle("hidden");
   });
-  // creates a Project overview in main 
+  // creates a Project overview in main
 }
 
 function showProjectForm() {
   console.log("addProject");
+}
+function submitProjectForm(e) {
+  const title = document.getElementById("project-title");
+  const color = document.getElementById("project-color");
+  const priority = document.getElementById("project-priority");
+  addProject(createProject(title.value, color.value, priority.value))
+  displayProjects()
+  
+  console.log(title.value);
+  console.log(color.value);
+  console.log(priority.value);
 }
 
 function showTaskForm() {
@@ -60,7 +78,7 @@ function hideTaskForm() {
   taskForm.classList.add("hidden");
 }
 function submitTaskForm(e) {
-  console.log("sumit task")
+  console.log("submit task");
   const form = e.target.closest("form");
   //todo don't like it DRY
   const title = form.querySelector("#task-title").value;
@@ -73,7 +91,7 @@ function submitTaskForm(e) {
   form.querySelector("#task-priority").value = "High";
 
   const task = createTask(title, description, dueDate, priority);
-  console.log(task)
+  console.log(task);
   addTaskTemp(task);
   displayTasks();
   hideTaskForm();

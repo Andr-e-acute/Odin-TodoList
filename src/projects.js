@@ -14,7 +14,7 @@ function createProject(title, color, priority) {
   };
 }
 
-function projectsFromLokal() {}
+function projectsFromLocal() {}
 
 function projectsFromTasks() {
   const projectArray = tempTaskStorage
@@ -48,7 +48,7 @@ function addProject(project) {
 //   console.log(project);
 //   console.log("is new in");
   projects.push(project);
-//   console.log(projects);
+  console.log(projects);
 }
 
 function deleteProject() {}
@@ -61,9 +61,9 @@ function getProjectsNames() {}
 // addProject(createProject("test"));
 // addProject(createProject("test2", "Format of Form", "overwritten"));
 // addProject(createProject("2.Project", "Format of Form", "overwritten"));
-console.log("------------------------------------------");
-console.log("creating Project from Task");
+// console.log("------------------------------------------");
+// console.log("creating Project from Task");
 projectsFromTasks();
-console.log("------------------------------------------");
+// console.log("------------------------------------------");
 
-export { projects };
+export { projects,createProject,addProject };

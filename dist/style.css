@@ -18,6 +18,7 @@ button {
   border: none;
 }
 
+
 :root {
   --bg-main-color: hsl(221, 10%, 40%);
   --bg-secondary-color: hsl(221, 10%, 20%);
@@ -141,4 +142,13 @@ nav > * {
 
 .btn {
   cursor: pointer;
+}
+/* ---------------------test shit */
+/*Todo delete make buttons  visible */
+button{
+  background: white;
+  border: 1px solid red;
+  padding: 10px;
+  margin: 10px;
+  cursor:crosshair
 }
