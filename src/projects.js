@@ -25,8 +25,11 @@ function projectsFromTasks() {
 // publics
 
 function addProject(project) {
+
+  
   // callback for check if project.title is the same
   const isSameTitle = (element) => element.title == project.title;
+  // Loop over every project and check for same title
   if (projects.some(isSameTitle)) {
     // some feedback error that is already there would be useful
         // console.log(project);
@@ -51,13 +54,13 @@ function addProject(project) {
 function deleteProject() {}
 function getProjectsNames() {}
 
-console.log("------------------------------------------");
-console.log("manuell adding test-Project");
-addProject(createProject("test", "FFFFFF"));
-addProject(createProject("test", "FFFFFF", "overwritten"));
-addProject(createProject("test"));
-addProject(createProject("test2", "Format of Form", "overwritten"));
-addProject(createProject("2.Project", "Format of Form", "overwritten"));
+// console.log("------------------------------------------");
+// console.log("manuell adding test-Project");
+// addProject(createProject("test", "FFFFFF"));
+// addProject(createProject("test", "FFFFFF", "overwritten"));
+// addProject(createProject("test"));
+// addProject(createProject("test2", "Format of Form", "overwritten"));
+// addProject(createProject("2.Project", "Format of Form", "overwritten"));
 console.log("------------------------------------------");
 console.log("creating Project from Task");
 projectsFromTasks();

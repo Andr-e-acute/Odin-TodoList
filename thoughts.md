@@ -5,7 +5,8 @@ get the project form working.
 -add button submit
 - in input.js create form submitting
 
-new Project button should open/hidde the project Modal 
+close button doesn't work check together 
+with  new Project button should open/hide the project Modal 
 
  create a new modalContainer
 
@@ -45,7 +46,7 @@ new Project button should open/hidde the project Modal
 -todoist changes where the newtask form appears when you click different buttons I like the form in the task list.
 -keyboard inputs a must for me..
 -colored flags for the priority dropdown
-
+ some kind of Warning for the add project  when a project is already there
  <!-- -when adding task need to recreate DOm where?
  -display in the sidebar which category is active. -->
 ------------------------------------------
