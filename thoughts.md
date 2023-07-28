@@ -1,12 +1,13 @@
 
 
 
-get the project form working.
--add button submit
-- in input.js create form submitting
+
+
 
 close button doesn't work check together 
 with  new Project button should open/hide the project Modal 
+-submit form should minimize add Project 
+
 
  create a new modalContainer
 

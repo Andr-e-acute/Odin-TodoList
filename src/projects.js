@@ -48,7 +48,6 @@ function addProject(project) {
 //   console.log(project);
 //   console.log("is new in");
   projects.push(project);
-  console.log(projects);
 }
 
 function deleteProject() {}

@@ -1,7 +1,11 @@
 import { addTaskTemp } from "./storage";
 import { createTask } from "./tasks";
-import { changeActiveCategory, displayTasks ,displayProjects } from "./manageDom";
-import {addProject, createProject}from"./projects";
+import {
+  changeActiveCategory,
+  displayTasks,
+  displayProjects,
+} from "./manageDom";
+import { addProject, createProject } from "./projects";
 
 const createEventListener = () => {
   //sidebar categories
@@ -16,8 +20,21 @@ const createEventListener = () => {
   projectsCategory.addEventListener("click", clickedProjects);
 
   //addProject btn
-  const addProjectBtn = document.querySelector(".addProject");
-  addProjectBtn.addEventListener("click", showProjectForm);
+  const addProjectBtns = document.querySelectorAll(".addProject");
+  addProjectBtns.forEach(addProjectBtn=>{
+
+    addProjectBtn.addEventListener("click", showProjectForm);
+  })
+  // close ProjectForm
+  const closeProjectBtn = document.querySelector(".closeProjectForm");
+  closeProjectBtn.addEventListener("click", hideProjectForm);
+  // submit ProjectForm
+  const submitProject = document.getElementById("projectForm");
+  submitProject.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log("add Project");
+    submitProjectForm();
+  });
 
   // addTaskForm btn
   const addTasksBtn = document.querySelectorAll(".openTaskForm");
@@ -36,13 +53,6 @@ const createEventListener = () => {
     console.log("submitProjcets");
     submitTaskForm(e);
   });
-  // submit ProjectForm
-  const submitProject = document.getElementById("projectForm");
-  submitProject.addEventListener("submit", (e) => {
-    e.preventDefault();
-    console.log("add Project");
-    submitProjectForm(e);
-  });
 };
 function clickedProjects() {
   //toggle visibility
@@ -54,24 +64,31 @@ function clickedProjects() {
 }
 
 function showProjectForm() {
-  console.log("addProject");
+  const projectForm = document.querySelector(".addProjectForm");
+  projectForm.classList.remove("hidden");
+  hideTaskForm()
 }
-function submitProjectForm(e) {
+function hideProjectForm() {
+  const projectForm = document.querySelector(".addProjectForm");
+  projectForm.classList.add("hidden");
+}
+function submitProjectForm() {
   const title = document.getElementById("project-title");
   const color = document.getElementById("project-color");
   const priority = document.getElementById("project-priority");
-  addProject(createProject(title.value, color.value, priority.value))
-  displayProjects()
-  
-  console.log(title.value);
-  console.log(color.value);
-  console.log(priority.value);
+  addProject(createProject(title.value, color.value, priority.value));
+  displayProjects();
+  hideProjectForm();
+
+  title.value = "";
+  //reset color value?  console.log(color.value);
+  priority.value = 0;
 }
 
 function showTaskForm() {
-  console.log("showTask");
   const taskForm = document.querySelector(".addTask");
   taskForm.classList.remove("hidden");
+  hideProjectForm()
 }
 function hideTaskForm() {
   const taskForm = document.querySelector(".addTask");
