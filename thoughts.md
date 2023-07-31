@@ -1,21 +1,9 @@
-
-
-
-
-
-
-close button doesn't work check together 
-with  new Project button should open/hide the project Modal 
--submit form should minimize add Project 
-
-
- create a new modalContainer
-
- 
   add better default storage
   try local Storage
 
-  change task priority to tags?
+  projects in task form not asked connect
+
+  tasks done property isn't set in the task form
   
   clean up code comment it etc
     index.js
@@ -25,12 +13,14 @@ with  new Project button should open/hide the project Modal
     storage.js
     tasks.js
 
-  start styling
-   
+  start styling 
+    create a standart modalContainer
+    -default placement of the modal
     -both adds the same Modal! size and look?
     <!-- -header has no function? -->
     -collapse sidebar to 
     symbols?(then needs color for Projects)
+  Check odin requierments and publish
 
 ------------form/modal-----------------
 *Project and task(when expanded view ) share the same layout
@@ -48,6 +38,13 @@ with  new Project button should open/hide the project Modal
 -keyboard inputs a must for me..
 -colored flags for the priority dropdown
  some kind of Warning for the add project  when a project is already there
+
+ create requiered and default for task and projects form =+> later with nice error handling.
+
+  change task priority to tags?
+
+
+
  <!-- -when adding task need to recreate DOm where?
  -display in the sidebar which category is active. -->
 ------------------------------------------
