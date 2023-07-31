@@ -1,4 +1,4 @@
-import { compareAsc, isToday, isThisWeek } from "date-fns";
+import { compareAsc, isToday, isThisWeek,parseISO } from "date-fns";
 import { tempTaskStorage } from "./storage";
 
 let projectArray = createProjectArray();
@@ -17,9 +17,9 @@ function createTaskArray(choise = "not choosen") {
   if (choise === "all") {
     currentTaskList = [...tempTaskStorage];
   } else if (choise === "today") {
-    currentTaskList = tempTaskStorage.filter((task) => isToday(task.dueDate));
+    currentTaskList = tempTaskStorage.filter((task) => isToday(parseISO(task.dueDate)));
   } else if (choise === "week") {
-    currentTaskList = tempTaskStorage.filter((task) => isThisWeek(task.dueDate));
+    currentTaskList = tempTaskStorage.filter((task) => isThisWeek(parseISO(task.dueDate)));
   } else if (projectArray.includes(choise)) {
     currentTaskList = tempTaskStorage.filter((task) => {
       return task.project === choise;

@@ -1,9 +1,11 @@
+    styling
+    tasks in a grid or table(responsive) view?
+    tasks detail view
 
-  projects in task form not asked connect
-
-  tasks done property isn't set in the task form
-  
-  clean up code comment it etc
+    task without a due date where should they go
+    repeatable task how??
+    
+    clean up code comment it etc
     index.js
     input.js
     Libarian.js
@@ -18,6 +20,7 @@
     <!-- -header has no function? -->
     -collapse sidebar to 
     symbols?(then needs color for Projects)
+    
   Check odin requierments and publish
 
 ------------form/modal-----------------
