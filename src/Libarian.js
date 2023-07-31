@@ -2,17 +2,16 @@ import { compareAsc, isToday, isThisWeek,parseISO } from "date-fns";
 import { tempTaskStorage } from "./storage";
 
 let projectArray = createProjectArray();
+
 function createProjectArray() {
   const projectArray = [
     ...new Set(
       tempTaskStorage.filter((task) => task.project).map((task) => task.project)
     ),
   ];
-
   return projectArray;
 }
-
-function createTaskArray(choise = "not choosen") {
+function createTaskArray(choise) {
   let currentTaskList = [];
   if (choise === "all") {
     currentTaskList = [...tempTaskStorage];
@@ -29,10 +28,10 @@ function createTaskArray(choise = "not choosen") {
       { title: "libarian messed up", description: `choise was:${choise}` },
     ];
   }
-
   return currentTaskList;
 }
-// by date for now
+
+// unused for now  by date 
 function sortTasklist(taskList) {
   console.log(taskList);
   taskList.sort((a, b) => {

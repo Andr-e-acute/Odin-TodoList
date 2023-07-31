@@ -6,10 +6,7 @@
     repeatable task how??
     
     clean up code comment it etc
-    index.js
-    input.js
-    Libarian.js
-    manageDom.js
+  
     storage.js
     tasks.js
 
@@ -22,6 +19,8 @@
     symbols?(then needs color for Projects)
     
   Check odin requierments and publish
+
+  task sorting function prio date etc
 
 ------------form/modal-----------------
 *Project and task(when expanded view ) share the same layout
