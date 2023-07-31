@@ -1,5 +1,3 @@
-  add better default storage
-  try local Storage
 
   projects in task form not asked connect
 

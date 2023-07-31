@@ -35,16 +35,23 @@ button {
   --contrast-color: red;
   --text-color-contrast: red;
 }
+header{
+ font-size: 32px;
+ background-color: var(--bg-secondary-contrast);
 
+text-align: center;
+}
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: var(--text-color);
   background-color: var(--bg-main-color);
-  height: 100vh;
-  display: flex;
-}
 
+}
+main{
+  display: flex;
+  height: 100vh;
+}
 #sidebar {
   padding-top: 25px;
   height: 100%;

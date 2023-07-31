@@ -9,20 +9,22 @@
     <title>Odin Todo List</title>
   </head>
   <body>
-    <nav id="sidebar" class="expanded">
-      <li data-tasks="all">
-        <div>All</div>
-      </li>
-      <li data-tasks="today">Today</li>
-      <li data-tasks="week">Week</li>
-      <div class="projects hideProjects">
-        Projects
-        <div id="show-projects" class="toggleProjectsVis hidden"></div>
-        <div id="hide-projects" class="toggleProjectsVis"></div>
-      </div>
-      <button class="addProject toggleProjectsVis">new Project</button>
-    </nav>
+    <header></header>
     <main>
+      <nav id="sidebar" class="expanded">
+        <li data-tasks="all">
+          <div>All</div>
+        </li>
+        <li data-tasks="today">Today</li>
+        <li data-tasks="week">Week</li>
+        <div class="projects hideProjects">
+          Projects
+          <div id="show-projects" class="toggleProjectsVis hidden"></div>
+          <div id="hide-projects" class="toggleProjectsVis"></div>
+        </div>
+        <button class="addProject toggleProjectsVis">new Project</button>
+      </nav>
+      <div id="contentContainer">
       <div id="todos"></div>
       <button class="btn openTaskForm">add Task</button>
       <button class="btn addProject">add Project</button>
@@ -69,6 +71,7 @@
           </form>
         </section>
       </div>
+    </div>
     </main>
   </body>
 </html>

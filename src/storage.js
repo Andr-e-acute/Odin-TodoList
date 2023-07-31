@@ -1,22 +1,6 @@
 import { createTask } from "./tasks";
-let tempTaskStorage = [
-  // {
-  //   title: "title1",
-  //   description: "description1",
-  //   dueDate: "01.01.11",
-  //   priority: "1",
-  //   done: "true",
-  //   // checklist:{1:{done:true}}
-  //   // notes:?are not the same as description,longer text.
-  // },
-  // {
-  //   title: "title2",
-  //   description: "description2",
-  //   dueDate: "02.02.22",
-  //   priority: "2",
-  //   done: "false",
-  // },
-];
+let tempTaskStorage = [];
+
 
 // ---------------------------------------
 // iffe ??
@@ -51,13 +35,11 @@ function setLocalStorage(storage) {
 //   get local Storage
 // use a iffe ? or the other think immediatly load module forget the name of it??
 function getLocalStorage() {
-  console.log("getLocalStorage");
   if (storageAvailable("localStorage")) {
     // only load it when the storage is not empty
     if (localStorage.getItem("tasks")) {
       let jsonReturn = localStorage.getItem("tasks");
       jsonReturn = JSON.parse(jsonReturn);
-      console.log(jsonReturn);
       tempTaskStorage = jsonReturn;
     } else {
       // todo example data delete when finished
@@ -99,8 +81,11 @@ function getLocalStorage() {
       );
     }
   } else {
-    // todo create a banner to warn that there is no local storage
-    // how to test this?
+    // ManageDom Js would be the better place but i can't access it yet because
+    // I need this file to create task to create the displayed task in ManageDom
+      const header= document.querySelector("header")
+      header.textContent="No Local Storage available can't save data local!"
+    
   }
 }
 

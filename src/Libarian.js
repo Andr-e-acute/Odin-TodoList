@@ -13,7 +13,6 @@ function createProjectArray() {
 }
 
 function createTaskArray(choise = "not choosen") {
-  console.log(`create a taskList with:${choise} tasks`);
   let currentTaskList = [];
   if (choise === "all") {
     currentTaskList = [...tempTaskStorage];
