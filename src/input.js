@@ -31,7 +31,6 @@ const createEventListeners = () => {
   const submitProject = document.getElementById("projectForm");
   submitProject.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("add Project");
     submitProjectForm();
   });
 
@@ -49,7 +48,6 @@ const createEventListeners = () => {
   const submitTask = document.querySelector(".taskForm");
   submitTask.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("submitProjcets");
     submitTaskForm(e);
   });
 };
@@ -105,6 +103,6 @@ function submitTaskForm(e) {
   displayTasks();
   hideTaskForm();
   title.value = "";
-  description.value="";
+  description.value = "";
 }
 export { createEventListeners };

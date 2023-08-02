@@ -25,53 +25,56 @@
         <button class="addProject toggleProjectsVis">new Project</button>
       </nav>
       <div id="contentContainer">
-      <div id="todos"></div>
-      <button class="btn openTaskForm">add Task</button>
-      <button class="btn addProject">add Project</button>
-      <div class="modals">
-        <section class="modal addProjectForm">
-          <div class="formHeader">
-            <h3>add Project</h3>
-            <button class="btn closeProjectForm">⨉</button>
-          </div>
-          <form id="projectForm">
-            <label for="project-title">Title</label>
-            <input type="text" id="project-title" required/>
-            <label for="project-color">Color</label>
-            <input type="color" id="project-color" value="#e66465" />
-            <label for="project-priority">Priority</label>
-            <select name="priority" id="project-priority">
-              <option value="0">none</option>
-              <option value="3">High</option>
-              <option value="2">Medium</option>
-              <option value="1">Low</option>
-            </select>
-            <button class="btn submitProjectForm" type="submit">Submit</button>
-          </form>
-        </section>
-        <section class="modal addTask hidden">
-          <div class="formHeader">
-            <h3>add Task</h3>
-            <button class="btn closeTaskForm">⨉</button>
-          </div>
-          <form class="taskForm">
-            <label for="task-title">Title</label>
-            <input type="text" id="task-title" required/>
-            <label for="task-description" >Description</label>
-            <textarea id="task-description"></textarea>
-            <label for="task-dueDate">Due-Date</label>
-            <input type="date" id="task-dueDate" />
-            <label for="task-priority">Priority</label>
-            <select name="priority" id="task-priority">
-              <option value="3">High</option>
-              <option value="2">Medium</option>
-              <option value="1">Low</option>
-            </select>
-            <button class="btn submitTaskForm" type="submit">Submit</button>
-          </form>
-        </section>
+        <div id="headerContainer">project title</div>
+        <div id="todos"></div>
+        <button class="btn openTaskForm">add Task</button>
+        <button class="btn addProject">add Project</button>
+        <div class="modals">
+          <section class="modal addProjectForm">
+            <div class="formHeader">
+              <h3>add Project</h3>
+              <button class="btn closeProjectForm">⨉</button>
+            </div>
+            <form id="projectForm">
+              <label for="project-title">Title</label>
+              <input type="text" id="project-title" required />
+              <label for="project-color">Color</label>
+              <input type="color" id="project-color" value="#e66465" />
+              <label for="project-priority">Priority</label>
+              <select name="priority" id="project-priority">
+                <option value="0">none</option>
+                <option value="3">High</option>
+                <option value="2">Medium</option>
+                <option value="1">Low</option>
+              </select>
+              <button class="btn submitProjectForm" type="submit">
+                Submit
+              </button>
+            </form>
+          </section>
+          <section class="modal addTask hidden">
+            <div class="formHeader">
+              <h3>add Task</h3>
+              <button class="btn closeTaskForm">⨉</button>
+            </div>
+            <form class="taskForm">
+              <label for="task-title">Title</label>
+              <input type="text" id="task-title" required />
+              <label for="task-description">Description</label>
+              <textarea id="task-description"></textarea>
+              <label for="task-dueDate">Due-Date</label>
+              <input type="date" id="task-dueDate" />
+              <label for="task-priority">Priority</label>
+              <select name="priority" id="task-priority">
+                <option value="3">High</option>
+                <option value="2">Medium</option>
+                <option value="1">Low</option>
+              </select>
+              <button class="btn submitTaskForm" type="submit">Submit</button>
+            </form>
+          </section>
+        </div>
       </div>
-    </div>
     </main>
   </body>
 </html>

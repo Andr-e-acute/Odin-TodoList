@@ -4,6 +4,8 @@ import { format, isValid, parseISO } from "date-fns";
 const allCategory = document.querySelector("[data-tasks='all']");
 
 function changeActiveCategory(target) {
+  let contentTitle = document.querySelector("#headerContainer");
+  contentTitle.textContent = `${target.textContent}`;
   const currentActive = document.querySelector(".active") ?? allCategory;
   currentActive.classList.remove("active");
   target.classList.add("active");
